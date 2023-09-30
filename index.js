@@ -6,6 +6,11 @@ app.get('/', (req, res) => {
   res.send('Awesome cicd pipeline');
 });
 
+
+app.get('/about', (req, res) => {
+  res.send('This is about page');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
