@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Define the command to start your Express.js application
-CMD ["node", "run", "dev"]
+CMD ["node", "index.js"]
