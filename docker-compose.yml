@@ -1,6 +1,23 @@
 version: '3'
 services:
-  web :
+  web:
     image: forexspectrum/my-node-app:latest
     ports:
       - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - my-network
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
